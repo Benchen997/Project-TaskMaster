@@ -1,0 +1,28 @@
+.add-btn {
+    background-color: #1f7f10ab;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    transform: scale(1);  /* Initial scale is 1 */
+}
+
+.add-btn span {
+    color: white;
+    font-size: 2rem;  
+}
+
+.add-btn:hover {
+    background-color: #1f7f10;
+    cursor: pointer;
+    transform: scale(1.2);  /* Scale to 1.2 on hover */
+}
+
+
+
+
+

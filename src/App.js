@@ -1,24 +1,13 @@
-import logo from './logo.svg';
+// This file is the main file of the project. It is the first file that is run when the project is started.
 import './App.css';
+import ListContainer from './components/ListContainer';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <ListContainer />
+    </section>
   );
 }
 
