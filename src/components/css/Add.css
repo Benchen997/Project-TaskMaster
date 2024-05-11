@@ -1,7 +1,12 @@
+:root {
+    --primary-color: #1f7f10;
+    --button-diameter: 60px;
+}
+
 .add-btn {
-    background-color: #1f7f10ab;
-    height: 60px;
-    width: 60px;
+    background-color: var(--primary-color);
+    height: var(--button-diameter);
+    width: var(--button-diameter);
     border-radius: 50%;
     border: none;
     display: flex;

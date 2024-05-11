@@ -1,4 +1,4 @@
-import "../components-css/Add.css";
+import "./css/Add.css";
 import React from "react";
 
 function Add() {

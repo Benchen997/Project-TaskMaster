@@ -8,11 +8,19 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     padding: 50px;
     background-color: #fff;
+    width:40%;
   }
   
   .list-container h1 {
-    font-size: 3rem;
+    font-size: 8rem;
     margin-bottom: 20px;
     font-family: 'Roboto', sans-serif;
     color: #366edd;
+  }
+
+  .list-container hr {
+    width: 80%;
+    margin-bottom: 20px;
+    color: #000;
+    opacity: 0.7;
   }
