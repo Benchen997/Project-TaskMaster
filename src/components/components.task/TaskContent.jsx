@@ -2,9 +2,10 @@ import React from 'react';
 import "./task-container.css";
 
 
-function TaskContent() {
+function TaskContent({content}) {
     return (
-        <p className='task-content'> my first task
+        <p className='task-content'> 
+        {content}
         </p>
     )
 }
