@@ -1,22 +1,31 @@
 import React from 'react';
 import './css/ListContainer.css';
-import TaskContainer from './TaskContainer';
+import TaskContainer from './components.task/TaskContainer';
 import Add from './Add';
+import TaskEnterArea from './TaskEnterArea';
 
 function ListContainer() {
+    function addOnClick() {
+        console.log('Add button clicked');
+    }
     return (
         <section className='list-container'>
-            <h1>Your To-Do List</h1>
+            <h1>To Do:</h1>
             <hr/>
-            <TaskContainer/>
+            <ul>
+                <li> <TaskContainer/> </li>
+            </ul>
+
             {/* add task inline-block when button clicked */}
-            <Add/>
+
+            <span>
+                <TaskEnterArea/>
+                <Add onClick={addOnClick}/> 
+            </span>
         </section>
     )
 }
 
-function addOnClick() {
-    console.log('Add button clicked');
-}
+
 
 export default ListContainer;

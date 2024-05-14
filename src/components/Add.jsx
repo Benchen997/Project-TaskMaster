@@ -1,11 +1,12 @@
 import "./css/Add.css";
 import React from "react";
 
-function Add() {
+// passing onclick function as a prop to parent component
+function Add({onClick}) {
   return (
-    <button className="add-btn">
-        <span className="glyphicon glyphicon-plus">   
-        </span>
+    <button className="add-btn" onClick={onClick}>
+        <i className="glyphicon glyphicon-plus-sign">   
+        </i>
     </button>
  
   );

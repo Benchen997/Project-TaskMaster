@@ -1,31 +1,28 @@
 :root {
     --primary-color: #1f7f10;
+    --secondary-color: #125903;
     --button-diameter: 60px;
 }
 
 .add-btn {
-    background-color: var(--primary-color);
-    height: var(--button-diameter);
-    width: var(--button-diameter);
-    border-radius: 50%;
+    display: inline-block;
+    background-color: white;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    transform: scale(1);  /* Initial scale is 1 */
 }
 
-.add-btn span {
-    color: white;
-    font-size: 2rem;  
+.add-btn i {
+    color: var(--primary-color);
+    font-size: 2rem;
+    scale: 1;
+    transition: transform 0.3s ease;  
 }
 
-.add-btn:hover {
-    background-color: #1f7f10;
-    cursor: pointer;
-    transform: scale(1.2);  /* Scale to 1.2 on hover */
+.add-btn i:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
 }
+
+
 
 
 

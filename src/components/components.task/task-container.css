@@ -1,0 +1,48 @@
+.root {
+    --icon-size: 5rem;
+}
+
+.task-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.task-content {
+    padding: 10px;
+    min-width: 60%;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.complete-btn {
+    background-color: white;
+    border: none;
+}
+
+.complete-btn i {
+    font-size: var(--icon-size);
+    color: #1b7b05;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+}
+.complete-btn i:hover {
+    transform: scale(1.1);
+    color: #125903;
+}
+
+.options {
+    background-color: white;
+    border: none;
+}
+
+.options i {
+    font-size: var(--icon-size);
+    color: #6565cc;
+}
+
+.options i:hover {
+    color: #4d4d9f;
+}
+
