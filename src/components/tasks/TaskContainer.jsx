@@ -1,7 +1,6 @@
-import "./task-container.css";
+
 import React from "react";
 import TaskContent from "./TaskContent";
-import Options from "./Options";
 import CompleteBtn from "./CompleteBtn";
 
 /* 
@@ -17,7 +16,6 @@ function TaskContainer({ content }) {
         originated from task enter area */}
       <TaskContent content={content} />
       <CompleteBtn />
-      <Options />
     </span>
   );
 }

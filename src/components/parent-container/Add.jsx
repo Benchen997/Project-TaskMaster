@@ -1,4 +1,3 @@
-import "./css/Add.css";
 import React from "react";
 
 // passing onclick function as a prop to parent component

@@ -1,6 +1,5 @@
 import React from 'react';
-import './css/ListContainer.css';
-import TaskContainer from './components.task/TaskContainer';
+import TaskContainer from '../tasks/TaskContainer';
 
 function ListContainer( {taskList} ) {
     for (let i = 0; i < taskList.length; i++) {

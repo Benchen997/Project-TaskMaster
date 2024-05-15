@@ -1,5 +1,4 @@
 import React from 'react';
-import "./task-container.css";
 
 
 function TaskContent({content}) {

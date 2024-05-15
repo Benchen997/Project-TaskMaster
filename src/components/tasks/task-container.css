@@ -31,18 +31,3 @@
     transform: scale(1.1);
     color: #125903;
 }
-
-.options {
-    background-color: white;
-    border: none;
-}
-
-.options i {
-    font-size: var(--icon-size);
-    color: #6565cc;
-}
-
-.options i:hover {
-    color: #4d4d9f;
-}
-

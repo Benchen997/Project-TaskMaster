@@ -1,4 +1,3 @@
-import "./task-container.css";
 import React from "react";
 
 function CompleteBtn() {
