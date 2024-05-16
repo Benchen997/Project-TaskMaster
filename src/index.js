@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  //官方严格模式，检查不合理的代码，启用这个就必须遵守规范
+  // useEffect 会被执行两次，因为 StrictMode 会在渲染两次组件树，以检查是否有副作用
+  // 开发中建议使用，生产环境不建议使用
   <React.StrictMode>
     <App />
   </React.StrictMode>

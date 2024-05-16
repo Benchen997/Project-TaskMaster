@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 
 function App() {
+
   const [content, setContent] = useState('');
   const [taskList, setTaskList] = useState([]);
 
@@ -25,15 +26,16 @@ function App() {
   }
 
   return (
-    <section className='m-auto my-[20%] p-16 flex flex-col 
-                        items-center justify-center w-2/5 
-                        h-auto rounded-lg shadow-lg bg-white'>
+    <section
+      className='m-auto my-[20%] p-16 flex flex-col 
+      items-center justify-center w-2/5 
+      h-auto rounded-lg shadow-lg bg-white'>
       <h1 className='mb-5 self-start text-sky-400/100 text-7xl'>To Do :</h1>
-      <hr className="my-10 border-1 border-dashed border-gray-500 w-4/5"/>
-      <ListContainer taskList={taskList}/>
+      <hr className="my-10 border-1 border-dashed border-gray-500 w-4/5" />
+      <ListContainer taskList={taskList} />
       <span className='text-xl font-roboto flex justify-between w-4/5'>
-          <TaskEnterArea content={content} setContent={setContent}/>
-          <Add onClick={addOnClick}/> 
+        <TaskEnterArea content={content} setContent={setContent} />
+        <Add onClick={addOnClick} />
       </span>
     </section>
   );
