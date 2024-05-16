@@ -1,24 +1,25 @@
+import React from 'react';
+import CompleteCheck from './CompleteCheck'; 
+import TaskContent from './TaskContent'; 
+import TimeStamp from './TimeStamp'; 
 
-import React from "react";
-import TaskContent from "./TaskContent";
-import CompleteBtn from "./CompleteBtn";
-
-/* 
-this component is a container for the 
-task content, complete button and options 
-and is used in the ListContainer component 
-*/
-function TaskContainer({ content }) {
-
+function TaskContainer({ task }) {
   return (
-    <span className="task-container">
-      {/* the content is passed from parent container, 
-        originated from task enter area */}
-      <TaskContent content={content} />
-      <CompleteBtn />
-    </span>
+    <div className="flex items-center py-2">
+      {/* The checkbox */}
+      <div className="mr-4">
+        <CompleteCheck />
+      </div>
+      {/* The task content */}
+      <div className="flex-1">
+        <TaskContent content={task.content} />
+      </div>
+      {/* The timestamp */}
+      <div className="ml-4 text-gray-500">
+        <TimeStamp time={task.createTime} />
+      </div>
+    </div>
   );
 }
-
 
 export default TaskContainer;
