@@ -29,11 +29,15 @@ function App() {
     <section
       className='m-auto my-[20%] p-16 flex flex-col 
       items-center justify-center w-2/5 
-      h-auto rounded-lg shadow-lg bg-white'>
+      h-auto rounded-xlg shadow-lg bg-white overflow-hidden'>
       <h1 className='mb-5 self-start text-sky-400/100 text-7xl'>To Do :</h1>
       <hr className="my-10 border-1 border-dashed border-gray-500 w-4/5" />
       <ListContainer taskList={taskList} />
-      <span className='text-xl font-roboto flex justify-between w-4/5'>
+      <span className='
+        text-xl font-roboto 
+        flex-col justify-items-center
+        flex items-center     
+        justify-center w-4/5'>
         <TaskEnterArea content={content} setContent={setContent} />
         <Add onClick={addOnClick} />
       </span>

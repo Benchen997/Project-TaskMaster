@@ -1,14 +1,20 @@
-import React from "react";
+import React from 'react';
+import { ReactComponent as PlusCircleIcon } from '../../assets/plus-circle.svg'; // Adjust the path as necessary
 
-// passing onclick function as a prop to parent component
-function Add({onClick}) {
+function Add({ onClick }) {
   return (
-    <button className="add-btn" onClick={onClick}>
-        <i className="glyphicon glyphicon-plus-sign">   
-        </i>
+    <button
+      className="bg-transparent focus:outline-none
+      p-0 mt-10 text-green-500 
+      hover:text-green-700
+      active:scale-90 ease-in-out
+      "
+      onClick={onClick}>
+      <PlusCircleIcon className="w-full h-full" />
     </button>
- 
   );
 }
 
 export default Add;
+
+
