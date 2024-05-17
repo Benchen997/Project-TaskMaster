@@ -1,0 +1,13 @@
+import React from "react";
+import { ReactComponent as DeleteIcon } from "../../assets/delete.svg"; // Adjust the path as necessary
+
+function Delete({ deleteOnClick }) {
+  return (
+    <button className="bg-transparent focus:outline-none p-1 w-12 h-12 group" onClick={deleteOnClick}>
+      <DeleteIcon className="w-full h-full text-myText group-hover:text-red-500" />
+    </button>
+  );
+}
+
+export default Delete;
+

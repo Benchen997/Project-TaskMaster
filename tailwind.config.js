@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        myHeader: 'hsl(222.1, 65.5%, 34.1%)'
+        myHeader: '#7EAFE4',
+        myBackground: '#181A1B',
+        myText: '#F4F4F4',
+        myTableHeader: '#25282A',
+
       }
     },
   },

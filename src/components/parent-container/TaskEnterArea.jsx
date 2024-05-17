@@ -20,6 +20,7 @@ function TaskEnterArea({ content, setContent }) {
         ref={textareaRef}
         className='w-full h-auto rounded-md 
         p-8 m-2 border-2 border-gray-300 
+        bg-myBackground text-myText
         focus:outline-none text-4xl 
         focus:border-sky-400/100 resize-y 
         overflow-hidden

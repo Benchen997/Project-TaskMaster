@@ -3,7 +3,8 @@ import React from 'react';
 
 function TaskContent({content}) {
     return (
-        <p className='inline-block p-5 w-3/5 text-3xl font-roboto'> 
+        <p className='overflow-hidden text-ellipsis
+        w-full text-3xl font-roboto p-5'> 
         {content}
         </p>
     )
