@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { ReactComponent as FilterIcon } from "../../assets/filter.svg";
 import FilterMenu from "../filter-menu/FilterMenu";
 
-function FilterButton({ taskList }) {
+function FilterButton({ taskList, onOptionSelect}) {
     const [showMenu, setShowMenu] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
     const hideTimeout = useRef(null);
@@ -15,8 +15,12 @@ function FilterButton({ taskList }) {
 
     }, [taskList]);
 
+    // when an option is clicked, set the selected option and call the onOptionSelect callback
     const handleOptionClick = (option) => {
-        setSelectedOption(selectedOption === option ? "" : option);
+        // if the option is already selected, deselect it
+        const newOption = selectedOption === option ? "" : option;
+        setSelectedOption(newOption);
+        onOptionSelect(newOption);
     };
 
     const toggleMenu = () => {

@@ -1,7 +1,14 @@
 import React from "react";
 import TaskContainer from "../tasks/TaskContainer";
 
-function Table( {taskList, deleteOnClick, checked} ) {
+function Table( {taskList, deleteOnClick, checked, filterOption} ) {
+
+    const mappings = {"Doing": false, "Done": true};
+    const filteredTaskList = filterOption === ""
+        ? taskList
+        : taskList.filter((task) => task.completed === mappings[filterOption]);
+
+    console.log(`From table: ${filterOption}`);
     return (
         <table className='table-fixed w-full border-collapse'>
                 <thead className='sticky top-0 bg-myTableHeader text-myText'>
@@ -13,7 +20,7 @@ function Table( {taskList, deleteOnClick, checked} ) {
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-300">
-                    {taskList.map((task) => (
+                    {filteredTaskList.map((task) => (
                         <TaskContainer key={task.uid} 
                         task={task} 
                         deleteOnClick={() => deleteOnClick(task.uid)}
