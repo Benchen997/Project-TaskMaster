@@ -1,7 +1,7 @@
 import React from "react";
 import TaskContainer from "../tasks/TaskContainer";
 
-function Table( {taskList, deleteOnClick} ) {
+function Table( {taskList, deleteOnClick, checked} ) {
     return (
         <table className='table-fixed w-full border-collapse'>
                 <thead className='sticky top-0 bg-myTableHeader text-myText'>
@@ -14,7 +14,11 @@ function Table( {taskList, deleteOnClick} ) {
                 </thead>
                 <tbody className="divide-y divide-gray-300">
                     {taskList.map((task) => (
-                        <TaskContainer key={task.uid} task={task} deleteOnClick={() => deleteOnClick(task.uid)}/>
+                        <TaskContainer key={task.uid} 
+                        task={task} 
+                        deleteOnClick={() => deleteOnClick(task.uid)}
+                        checked={checked}  
+                        />
                     ))}
                 </tbody>
             </table>
