@@ -7,6 +7,7 @@ import Header from "./Header";
 function Dashboard() {
     const [content, setContent] = useState('');
     const [taskList, setTaskList] = useState([]);
+    const [filterOption, setFilterOption] = useState('');
     // Function to add a new task to the task list with few properties
     function addOnClick() {
         if (content.trim() !== '') {
@@ -38,8 +39,12 @@ function Dashboard() {
             })
         );   
     }
-    
-    //--------------------------------------------------------------------------------//
+    // callback function to get the filter option from the FilterButton component
+    const handleOptionSelect = (option) => {
+        setFilterOption(option);
+        console.log(option);
+    };
+
     return (
         <div className='m-auto flex flex-col 
                 items-center justify-center w-5/6 h-5/6
@@ -49,12 +54,13 @@ function Dashboard() {
                 rounded-xlg shadow-2xl shadow-cyan-500/50'>
 
             {/* Fixed title section */}
-            <Header taskList={taskList}/>
+            <Header taskList={taskList} onOptionSelect={handleOptionSelect}/>
             
             {/* Scrollable list container */}
             {
                 taskList.length > 0 ? (
-                    <ListContainer taskList={taskList} deleteOnClick={deleteOnClick} checked={checked}/>
+                    <ListContainer taskList={taskList} deleteOnClick={deleteOnClick} 
+                    checked={checked} filterOption={filterOption}/>
                 ) : (                   
                     <h1 className='text-4xl font-roboto text-myHeader'>You haven't create any task yet.</h1>           
                 )
