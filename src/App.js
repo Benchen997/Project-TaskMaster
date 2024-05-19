@@ -1,12 +1,11 @@
-import Dashboard from "./components/parent-container/Dashboard";
-import './App.css';
+// Date: 03/18/2021
+import Main from './components/Main';
 
 function App() {
   return (
-    <section className="flex p-0 m-0 h-screen 
-      overflow-hidden">
-      <Dashboard />
-    </section>
+    <>
+      <Main/>
+    </>
   );
 }
 

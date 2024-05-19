@@ -1,5 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 
+/*
+    TaskEnterArea component is a textarea element that allows users to enter the content of a task.
+    The textarea element will automatically resize based on the content length.
+    The content of the textarea is passed as a prop and updated by the parent component.
+    @param {string} content - The content of the task entered by the user
+    @param {function} setContent - The callback function to update the content of the task
+*/
 function TaskEnterArea({ content, setContent }) {
     const placeholder = 'What do you need to do today?';
     const textareaRef = useRef(null);
@@ -12,6 +19,10 @@ function TaskEnterArea({ content, setContent }) {
         }
     }
     useEffect(autoResize, [content]);
+
+    function handleContentChange(event) {
+        setContent(event.target.value);
+    }
 
     return (
         <textarea
@@ -27,7 +38,7 @@ function TaskEnterArea({ content, setContent }) {
         transition duration-300 ease-in-out'
         placeholder={placeholder}
         value={content}
-        onChange={(event) => setContent(event.target.value)}
+        onChange={handleContentChange}
         />
     );
 }

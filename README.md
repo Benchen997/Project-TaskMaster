@@ -4,11 +4,17 @@
 
 ## Features
 
+- **Naming List**: Define the task list name by your preference. 
 - **Add Tasks**: Quickly add new tasks to your to-do list.
 - **Delete Tasks**: Remove tasks that are no longer needed.
-- **Modify Tasks**: Edit task details to keep your list up-to-date.
 - **Filter Tasks by Status**: View tasks based on their completion status (completed or incomplete).
-- **Filter Tasks by Date**: Organize tasks by their creation or due date.
+- **Local Storage**: Using local storage Api to store your work despite of reloading page
+
+## Screenshot showcase:
+![Main Page Screenshot](./screenshots/main-page.png)
+![mouse hover on the name to rename list](./screenshots/mouse-hover-name.png)
+![reanme your list](./screenshots/rename.png)
+![filtering tasks have marked as done](./screenshots/filtering-done.png)
 
 ## Contact
 - My email: benchentravail2024@gmail.com

@@ -1,13 +1,34 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import ListContainer from "./ListContainer";
 import TaskEnterArea from "./TaskEnterArea";
 import Add from "./Add";
-import Header from "./Header";
+import FilterButton from "../filter-components/FilterButton";
+import InitialMessage from "./accessory-components/InitialMessage";
 
 function Dashboard() {
     const [content, setContent] = useState('');
     const [taskList, setTaskList] = useState([]);
+    /* 
+        state to manage the filter option, can be 'Doing', 'Done' or ''
+        this state will be passed to the table component to selectively 
+        render tasks based on the filter option 
+    */
     const [filterOption, setFilterOption] = useState('');
+
+    // Retrieve taskList from localStorage on mount
+    useEffect(() => {
+        const savedTaskList = localStorage.getItem('taskList');
+        // If there is a saved taskList, set the taskList state to the saved taskList
+        if (savedTaskList) {
+            setTaskList(JSON.parse(savedTaskList));
+        }
+    }, []);
+
+    // Save taskList to localStorage whenever it changes
+    useEffect(() => {
+        localStorage.setItem('taskList', JSON.stringify(taskList));
+    }, [taskList]);
+
     // Function to add a new task to the task list with few properties
     function addOnClick() {
         if (content.trim() !== '') {
@@ -32,43 +53,36 @@ function Dashboard() {
     function checked(uid) {
         setTaskList(
             taskList.map((task) => {
-                if (task.uid === uid) {
-                    return { ...task, completed: !task.completed };
-                }
-                return task;
+                return task.uid === uid ? { ...task, completed: !task.completed } : task;
             })
         );   
     }
     // callback function to get the filter option from the FilterButton component
-    const handleOptionSelect = (option) => {
+    function handleOptionSelect(option) {
         setFilterOption(option);
-        console.log(option);
-    };
+    }
 
     return (
-        <div className='m-auto flex flex-col 
-                items-center justify-center w-5/6 h-5/6
-                bg-myBackground
-                max-w-screen-md
-                max-h-screen-md
-                rounded-xlg shadow-2xl shadow-cyan-500/50'>
+        <div className='flex-grow bg-my-background p-20
+            justify-center items-center flex flex-col w-full h-full'>
 
-            {/* Fixed title section */}
-            <Header taskList={taskList} onOptionSelect={handleOptionSelect}/>
-            
-            {/* Scrollable list container */}
+            {/* 1. Filter button  */}
+            <span className="flex justify-endflex w-full justify-between items-center">
+                <div></div>
+                <FilterButton taskCount={taskList.length} onOptionSelect={handleOptionSelect}/>
+            </span>
+
+            {/* 2. Table holds the list of tasks*/}
             {
                 taskList.length > 0 ? (
-                    <ListContainer taskList={taskList} deleteOnClick={deleteOnClick} 
-                    checked={checked} filterOption={filterOption}/>
+                    <ListContainer taskList={taskList} deleteOnClick={deleteOnClick} checked={checked} filterOption={filterOption}/>
                 ) : (                   
-                    <h1 className='text-4xl font-roboto text-myHeader'>You haven't create any task yet.</h1>           
+                    <InitialMessage>You haven't create any task yet.</InitialMessage>           
                 )
             }
             
-            {/* Task input area */}
-            <span className='text-xl font-roboto flex flex-col justify-center items-center 
-            w-5/6 h-3/12 mt-20'>
+            {/* 3. Task input area */}
+            <span className='text-xl font-roboto flex flex-col justify-center items-center w-5/6 h-3/12 mt-20'>
                 <TaskEnterArea content={content} setContent={setContent} />
                 <Add onClick={addOnClick} />
             </span>
